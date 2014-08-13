@@ -1,0 +1,40 @@
+function colors {
+  local reset=0
+  local bold=1
+  local underline=4
+  local blink=5
+  local reverse=7
+  local conceal=8
+
+  local black=30
+  local black_bg=40
+  local red=31
+  local red_bg=41
+  local green=32
+  local green_bg=42
+  local yellow=33
+  local yellow_bg=43
+  local blue=34
+  local blue_bg=44
+  local magenta=35
+  local magenta_bg=45
+  local cyan=36
+  local cyan_bg=46
+  local white=37
+  local white_bg=47
+
+  local sem=''
+  for c in $@; do
+    echo -n "${sem}${!c}"
+    sem=';'
+  done
+}
+
+function mode {
+  local IFS=';'
+  echo "\033[$(colors $@)m"
+}
+
+function pmode {
+  echo "\\[$(mode $@)\\]"
+}

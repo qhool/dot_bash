@@ -1,0 +1,6 @@
+. $HOME/.bash/colors
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+host_color=${host_color-white}
+host_bg=${host_bg-red_bg}
+PS1="$(pmode yellow)\D{%Y/%m/%d %H:%M:%S}$(pmode reset) $(pmode bold yellow)\u$(pmode white)@$(pmode $host_color $host_bg)\h$(pmode reset)$(pmode blue)\$(__git_ps1) $(pmode reset)\n$(pmode bold white red_bg)${debian_chroot:+($debian_chroot)}$(pmode reset)\w\$ "
