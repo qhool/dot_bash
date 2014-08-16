@@ -1,4 +1,4 @@
-. $HOME/.bash/colors
+. $HOME/.bash/lib/colors
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 host_color=${host_color-white}

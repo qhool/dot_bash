@@ -101,8 +101,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-. $HOME/.bash/git-sh-prompt
 
 . $HOME/.bashrc_local
 
-. $HOME/.bash/prompt
+for x in $HOME/.bash/rc.d/*; do
+    . $x
+done
+
+
