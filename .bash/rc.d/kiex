@@ -1,0 +1,1 @@
+test -f $HOME/.kiex/scripts/kiex && . $HOME/.kiex/scripts/kiex
